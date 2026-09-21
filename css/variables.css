@@ -1,0 +1,50 @@
+:root {
+  /* Color palette — greens, beige, black & white */
+  --color-black: #0d0f0c;
+  --color-black-soft: #16180f;
+  --color-white: #faf8f2;
+  --color-beige: #e9e2cf;
+  --color-beige-dark: #cabe98;
+  --color-beige-darker: #a99b6c;
+  --color-green-900: #12241a;
+  --color-green-800: #1c3327;
+  --color-green-700: #274a35;
+  --color-green-600: #3a6b4a;
+  --color-green-500: #5c8a5f;
+  --color-green-400: #8bab7c;
+  --color-green-300: #b7cba1;
+
+  /* Semantic tokens */
+  --bg-primary: var(--color-black);
+  --bg-secondary: var(--color-green-900);
+  --bg-surface: var(--color-beige);
+  --text-primary: var(--color-white);
+  --text-on-light: var(--color-black);
+  --text-muted: var(--color-beige-dark);
+  --accent: var(--color-green-500);
+  --accent-light: var(--color-green-300);
+  --border-color: rgba(233, 226, 207, 0.16);
+
+  /* Typography */
+  --font-display: "Bebas Neue", "Poppins", sans-serif;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-huge: clamp(3.5rem, 12vw, 11rem);
+  --fs-xl: clamp(2.5rem, 7vw, 6rem);
+  --fs-lg: clamp(1.8rem, 4vw, 3.2rem);
+  --fs-md: clamp(1.1rem, 2vw, 1.5rem);
+  --fs-body: clamp(1rem, 1.2vw, 1.15rem);
+  --fs-sm: 0.85rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Layout */
+  --max-width: 1400px;
+  --radius: 6px;
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}

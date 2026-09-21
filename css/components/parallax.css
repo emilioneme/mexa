@@ -1,0 +1,11 @@
+/* Pure CSS/JS parallax utilities used across sections */
+
+[data-parallax] {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] {
+    transform: none !important;
+  }
+}
