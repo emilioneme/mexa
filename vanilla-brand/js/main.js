@@ -3,6 +3,28 @@
 
 (function () {
   /* ---------------------------------------------------------------------
+     Loads each [data-include] mount point's HTML component from the
+     components/ folder before the rest of the page initializes.
+  --------------------------------------------------------------------- */
+  async function includeComponents() {
+    const mounts = Array.from(document.querySelectorAll("[data-include]"));
+
+    await Promise.all(
+      mounts.map(async (mount) => {
+        const url = mount.getAttribute("data-include");
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`Failed to load ${url}`);
+          mount.outerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          mount.innerHTML = `<p style="color:#c66">Could not load component: ${url}</p>`;
+        }
+      })
+    );
+  }
+
+  /* ---------------------------------------------------------------------
      Generic carousel: works for the hero and the info section alike.
      Expects a root element with:
        .carousel__track > .carousel__slide (repeated)
@@ -126,24 +148,32 @@
   }
 
   /* ---------------------------------------------------------------------
-     Information carousel content injection
+     Hero carousel content injection (data-oriented, click-through links)
   --------------------------------------------------------------------- */
-  function initInfoSlides() {
-    const track = document.querySelector("[data-info-track]");
-    if (!track || !window.VANILLA_INFO_SLIDES) return;
-    track.innerHTML = window.VANILLA_INFO_SLIDES
-      .map(
-        (s) => `
-      <div class="carousel__slide">
-        <h3>${s.title}</h3>
-        <p>${s.text}</p>
-      </div>`
-      )
+  function initHeroSlides() {
+    const track = document.querySelector("[data-hero-track]");
+    if (!track || !window.VANILLA_HERO_SLIDES) return;
+
+    track.innerHTML = window.VANILLA_HERO_SLIDES
+      .map((s) => {
+        const tag = s.link ? "a" : "div";
+        const href = s.link ? ` href="${s.link}"` : "";
+        return `
+      <${tag} class="carousel__slide hero__slide"${href}>
+        ${s.image ? `<img src="${s.image}" alt="${s.title || ""}">` : ""}
+        <div class="hero__caption">
+          ${s.eyebrow ? `<span class="eyebrow">${s.eyebrow}</span>` : ""}
+          ${s.title ? `<h2>${s.title}</h2>` : ""}
+        </div>
+      </${tag}>`;
+      })
       .join("");
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initInfoSlides();
+  document.addEventListener("DOMContentLoaded", async () => {
+    await includeComponents();
+
+    initHeroSlides();
     initProducts();
 
     const hero = document.querySelector("[data-carousel='hero']");

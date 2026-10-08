@@ -10,118 +10,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/categories.css">
+  <link rel="stylesheet" href="css/components/info.css">
+  <link rel="stylesheet" href="css/components/footer.css">
 </head>
 <body>
 
-  <!-- 1. HEADER -->
-  <header class="site-header">
-    <div class="site-header__name">VANILLA<span>CO.</span></div>
-  </header>
+  <div id="header-root" data-include="components/header.html"></div>
 
   <main>
 
-    <!-- 2. HERO (image carousel) -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <div class="carousel" data-carousel="hero">
-          <div class="carousel__track">
-            <div class="carousel__slide">
-              <div class="hero__caption">
-                <span class="eyebrow">Harvested with Care</span>
-                <h2>Pure Vanilla, Naturally.</h2>
-              </div>
-            </div>
-            <div class="carousel__slide">
-              <div class="hero__caption">
-                <span class="eyebrow">Single Origin</span>
-                <h2>From Pod to Pantry.</h2>
-              </div>
-            </div>
-            <div class="carousel__slide">
-              <div class="hero__caption">
-                <span class="eyebrow">Baker's Choice</span>
-                <h2>Flavor You Can Trust.</h2>
-              </div>
-            </div>
-          </div>
-          <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous slide">&#10094;</button>
-          <button class="carousel__arrow carousel__arrow--next" aria-label="Next slide">&#10095;</button>
-          <div class="carousel__dots"></div>
-        </div>
-      </div>
-    </section>
+    <div id="hero-root" data-include="components/hero.html"></div>
 
-    <!-- 3. PRODUCT CATEGORY TOGGLE -->
-    <section id="categories">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Shop by Type</span>
-          <h2>Our Products</h2>
-        </div>
-        <div class="category-toggle" data-category-toggle></div>
+    <div id="categories-root" data-include="components/categories.html"></div>
 
-        <!-- 4. PRODUCTS -->
-        <div class="products__grid" data-products-grid></div>
-      </div>
-    </section>
-
-    <!-- 6. INFORMATION (carousel) -->
-    <section class="info" id="info">
-      <div class="container">
-        <div class="carousel" data-carousel="info">
-          <div class="carousel__track" data-info-track></div>
-          <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous slide">&#10094;</button>
-          <button class="carousel__arrow carousel__arrow--next" aria-label="Next slide">&#10095;</button>
-          <div class="carousel__dots"></div>
-        </div>
-      </div>
-    </section>
+    <div id="info-root" data-include="components/info.html"></div>
 
   </main>
 
-  <!-- 7. FOOTER -->
-  <footer class="site-footer" id="contact">
-    <div class="container">
-      <div class="site-footer__top">
-        <div class="site-footer__brand">
-          <h2>VANILLA<span>CO.</span></h2>
-          <p>Pure vanilla pods, extract, paste and powder — sourced with care, shipped with love.</p>
-        </div>
-        <div class="site-footer__links">
-          <div class="site-footer__col">
-            <h4>Shop</h4>
-            <ul>
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#categories">Products</a></li>
-              <li><a href="#info">About</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="mailto:hello@vanillaco.com">hello@vanillaco.com</a></li>
-              <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__col">
-            <h4>Social</h4>
-            <ul>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="site-footer__bottom">
-        <p>&copy; 2026 Vanilla Co. All rights reserved.</p>
-        <p><a href="#hero">Back to top</a></p>
-      </div>
-    </div>
-  </footer>
+  <div id="footer-root" data-include="components/footer.html"></div>
 
   <script src="js/data/categories.data.js" defer></script>
   <script src="js/data/products.data.js" defer></script>
-  <script src="js/data/info.data.js" defer></script>
+  <script src="js/data/hero.data.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

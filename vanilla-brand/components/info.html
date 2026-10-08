@@ -1,0 +1,62 @@
+<section class="info" id="info">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our Story</span>
+      <h2>Rooted in Vanilla</h2>
+    </div>
+
+    <!-- A "page carousel": each .info-row is a full slide — clicking an
+         arrow swaps to the next page. Every slide is its own self-contained
+         bit of HTML, padded so its content never sits under the arrows. -->
+    <div class="carousel" data-carousel="info">
+      <div class="carousel__track" data-info-track>
+
+        <!-- Page 1: image left, text right -->
+        <div class="carousel__slide info-row">
+          <div class="info-row__media">
+            <span class="info-row__placeholder">Image</span>
+          </div>
+          <div class="info-row__content">
+            <h3>About Us</h3>
+            <p>We are a small team devoted to sourcing the finest vanilla from trusted growers, bringing pure, honest flavor from farm to kitchen.</p>
+            <p>Every pod is hand-selected and every batch is tested, so what lands in your kitchen is exactly what we'd use in our own.</p>
+          </div>
+        </div>
+
+        <!-- Page 2: text left, image right -->
+        <div class="carousel__slide info-row info-row--reverse">
+          <div class="info-row__media">
+            <span class="info-row__placeholder">Image</span>
+          </div>
+          <div class="info-row__content">
+            <h3>Why Bakers Choose Us</h3>
+            <p>From professional pastry kitchens to home bakers, our vanilla is chosen for its consistency and depth of flavor.</p>
+            <ul class="info-list">
+              <li>Hand-sorted, plump grade-A pods</li>
+              <li>Small-batch extraction for full flavor</li>
+              <li>Traceable, single-origin sourcing</li>
+              <li>No corn syrup or artificial flavoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Page 3: image left, text right -->
+        <div class="carousel__slide info-row">
+          <div class="info-row__media">
+            <span class="info-row__placeholder">Image</span>
+          </div>
+          <div class="info-row__content">
+            <h3>Origin of Vanilla</h3>
+            <p>Vanilla was first cultivated by the Totonac people on the Gulf Coast of Mexico, who prized the orchid's pods as a sacred offering and a luxurious flavoring for cacao drinks long before Europeans arrived.</p>
+            <p>After the Spanish conquest, vanilla pods made their way to Europe, and vanilla orchids were later carried to islands like Réunion and Madagascar — but the plant stubbornly refused to bear fruit, since its one natural pollinator, the Melipona bee, only lived in Mexico.</p>
+            <p>In 1841, on the French island of Réunion, a 12-year-old enslaved boy named Edmond Albius discovered that the flowers could be hand-pollinated with a simple quick touch of a thin stick and thumb. His technique is still used around the world today and is the reason vanilla could finally be grown far from home.</p>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous slide">&#10094;</button>
+      <button class="carousel__arrow carousel__arrow--next" aria-label="Next slide">&#10095;</button>
+      <div class="carousel__dots"></div>
+    </div>
+  </div>
+</section>

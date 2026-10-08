@@ -1,0 +1,154 @@
+/* ==========================================================================
+   INFORMATION SECTION
+   Plain HTML rows (not data-driven) so each one can have its own layout.
+   They share the .info-row / .info-row--reverse / .info-row__media /
+   .info-row__content classes below, plus whatever content classes
+   (.info-list, .info-quote, etc.) a given row needs.
+   ========================================================================== */
+.info {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+}
+
+.info .section-heading h2,
+.info .eyebrow {
+  color: var(--accent-light);
+}
+
+.info .carousel__arrow {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-on-dark);
+}
+
+.info .carousel__arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.info .carousel__dot {
+  border-color: var(--text-on-dark);
+}
+
+.info .carousel__dot.is-active {
+  background: var(--text-on-dark);
+}
+
+/* ---- Shared alternating media row (one full "page" per slide) ----
+   Horizontal padding keeps content clear of the prev/next arrows,
+   which are absolutely positioned on top of the carousel. ---- */
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 72px;
+}
+
+.info-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.info-row__media {
+  flex: 0 0 min(40%, 340px);
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-subtle);
+  background: var(--bg-dark-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.info-row__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-row__placeholder {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-on-dark);
+  opacity: 0.5;
+}
+
+.info-row__content {
+  flex: 1;
+  text-align: left;
+}
+
+.info-row__content h3 {
+  font-size: var(--fs-xl);
+  color: var(--accent-light);
+  margin-bottom: var(--space-sm);
+}
+
+.info-row__content p {
+  font-size: var(--fs-md);
+  margin: 0 0 var(--space-xs);
+}
+
+.info-row__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Reusable content pieces a row can opt into ---- */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: var(--space-sm);
+}
+
+.info-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: var(--fs-md);
+}
+
+.info-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.info-quote {
+  margin: var(--space-sm) 0 0;
+}
+
+.info-quote p {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.info-quote cite {
+  display: block;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  opacity: 0.75;
+}
+
+@media (max-width: 720px) {
+  .info-row {
+    padding-inline: 56px;
+  }
+
+  .info-row,
+  .info-row--reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-row__media {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .info-row__content {
+    text-align: center;
+  }
+}
