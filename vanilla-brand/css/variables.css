@@ -4,31 +4,37 @@
    Change the values below to re-skin the entire site instantly.
    ========================================================================== */
 :root {
-  /* ---- Brand palette (edit these to rebrand) ---- */
-  --vb-cream: #faf3e6;        /* background / light surfaces */
-  --vb-cream-dark: #f0e3cc;   /* secondary surfaces, cards */
-  --vb-pod: #2b1a12;          /* vanilla pod dark brown — primary text/bg */
-  --vb-pod-light: #4a2f20;    /* lighter brown for accents */
-  --vb-bean: #6b4226;         /* mid brown */
-  --vb-gold: #c89b4a;         /* accent gold */
-  --vb-gold-light: #e4c784;   /* light gold / hover */
-  --vb-white: #ffffff;
+/* ---- Bean palette ---- */
+  --bg-body-var: #faf3e6;
+  --bg-surface-var: #ffffff;
+  --bg-dark-var: #2b1a12;
+  --bg-dark-alt-var: #4a2f20;
+
+  --text-primary-var: #2b1a12;
+  --text-on-dark-var: #ffffff;
+  --text-muted-var: #6b4226;
+
+  --accent-var: #c89b4a;
+  --accent-light-var: #e4c784;
+
+  --border-color-var: #454545;
+  --border-color-dark-var: #130c01;
 
   /* ---- Semantic tokens (used throughout the site, don't rename) ---- */
-  --bg-body: var(--vb-cream);
-  --bg-surface: var(--vb-cream-dark);
-  --bg-dark: var(--vb-pod);
-  --bg-dark-alt: var(--vb-pod-light);
+  --bg-body: var(--bg-body-var);
+  --bg-surface: var(--bg-surface-var);
+  --bg-dark: var(--bg-dark-var);
+  --bg-dark-alt: var(--bg-dark-alt-var);
 
-  --text-primary: var(--vb-pod);
-  --text-on-dark: var(--vb-cream);
-  --text-muted: var(--vb-bean);
+  --text-primary: var(--text-primary-var);
+  --text-on-dark: var(--text-on-dark-var);
+  --text-muted: var(--text-muted-var);
 
-  --accent: var(--vb-gold);
-  --accent-light: var(--vb-gold-light);
+  --accent: var(--accent-var);
+  --accent-light: var(--accent-light-var);
 
-  --border-color: rgba(43, 26, 18, 0.12);
-  --border-color-dark: rgba(250, 243, 230, 0.18);
+  --border-color: var(--border-color-var);
+  --border-color-dark: var(--border-color-dark-var);
 
   /* ---- Typography ---- */
   --font-display: "Playfair Display", "Georgia", serif;
@@ -53,4 +59,163 @@
   --radius-sm: 6px;
   --radius-subtle: 3px;
   --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   ALTERNATE PALETTE — "Pastel Citrus"
+   A soft, light green + yellow theme. Doesn't touch the default :root
+   values above — opt in by adding data-theme="pastel-citrus" to <html>
+   (or any ancestor element) and every semantic token below takes over.
+   ========================================================================== */
+[data-theme="pastel-citrus"] {
+  /* ---- Pastel citrus palette ---- */
+  --bg-body-var: #f9fbe8;
+  --bg-surface-var: #ffffff;
+  --bg-dark-var: #4a6b3a;
+  --bg-dark-alt-var: #6b8f52;
+
+  --text-primary-var: #3b4a2a;
+  --text-on-dark-var: #f9fbe8;
+  --text-muted-var: #7a8f63;
+
+  --accent-var: #d9c64a;
+  --accent-light-var: #eadf8a;
+
+  --border-color-var: #d8e3b8;
+  --border-color-dark-var: #2f4323;
+
+  /* ---- Semantic tokens pick up the values above automatically ---- */
+  --bg-body: var(--bg-body-var);
+  --bg-surface: var(--bg-surface-var);
+  --bg-dark: var(--bg-dark-var);
+  --bg-dark-alt: var(--bg-dark-alt-var);
+
+  --text-primary: var(--text-primary-var);
+  --text-on-dark: var(--text-on-dark-var);
+  --text-muted: var(--text-muted-var);
+
+  --accent: var(--accent-var);
+  --accent-light: var(--accent-light-var);
+
+  --border-color: var(--border-color-var);
+  --border-color-dark: var(--border-color-dark-var);
+}
+
+/* ==========================================================================
+   ALTERNATE PALETTE — "White Orchard"
+   Crisp white background with yellow/green accents. Also doesn't touch
+   the default :root values — opt in with data-theme="white-orchard".
+   ========================================================================== */
+[data-theme="white-orchard"] {
+  /* ---- White Orchard palette ---- */
+  --bg-body-var: #ffffff;
+  --bg-surface-var: #f3f7ea;
+  --bg-dark-var: #2e4b22;
+  --bg-dark-alt-var: #3f6530;
+
+  --text-primary-var: #233318;
+  --text-on-dark-var: #ffffff;
+  --text-muted-var: #5c7a4a;
+
+  --accent-var: #c7d94a;
+  --accent-light-var: #e3ec8f;
+
+  --border-color-var: #e3ead0;
+  --border-color-dark-var: #1c2a13;
+
+  /* ---- Semantic tokens pick up the values above automatically ---- */
+  --bg-body: var(--bg-body-var);
+  --bg-surface: var(--bg-surface-var);
+  --bg-dark: var(--bg-dark-var);
+  --bg-dark-alt: var(--bg-dark-alt-var);
+
+  --text-primary: var(--text-primary-var);
+  --text-on-dark: var(--text-on-dark-var);
+  --text-muted: var(--text-muted-var);
+
+  --accent: var(--accent-var);
+  --accent-light: var(--accent-light-var);
+
+  --border-color: var(--border-color-var);
+  --border-color-dark: var(--border-color-dark-var);
+}
+
+/* ==========================================================================
+   ALTERNATE PALETTE — "Vanilla Blossom"
+   Drawn from a botanical watercolor of the vanilla orchid: paper-white
+   background, deep leaf and stem greens, pale yellow-green petals and the
+   golden-yellow lip. Opt in with data-theme="vanilla-blossom".
+   ========================================================================== */
+[data-theme="vanilla-blossom"] {
+  /* ---- Vanilla Blossom palette ---- */
+  --bg-body-var: #f4f3ee;          /* watercolor paper */
+  --bg-surface-var: #ffffff;
+  --bg-dark-var: #2f6b24;          /* deep leaf green */
+  --bg-dark-alt-var: #4c8c33;      /* stem green */
+
+  --text-primary-var: #1f3a17;
+  --text-on-dark-var: #fbfaf3;
+  --text-muted-var: #5f7f4a;
+
+  --accent-var: #d9b91c;           /* orchid lip yellow */
+  --accent-light-var: #dfe89a;     /* petal yellow-green */
+
+  --border-color-var: #dde5c8;
+  --border-color-dark-var: #1a2e12;
+
+  /* ---- Semantic tokens pick up the values above automatically ---- */
+  --bg-body: var(--bg-body-var);
+  --bg-surface: var(--bg-surface-var);
+  --bg-dark: var(--bg-dark-var);
+  --bg-dark-alt: var(--bg-dark-alt-var);
+
+  --text-primary: var(--text-primary-var);
+  --text-on-dark: var(--text-on-dark-var);
+  --text-muted: var(--text-muted-var);
+
+  --accent: var(--accent-var);
+  --accent-light: var(--accent-light-var);
+
+  --border-color: var(--border-color-var);
+  --border-color-dark: var(--border-color-dark-var);
+}
+
+/* ==========================================================================
+   ALTERNATE PALETTE — "Forest Floor"
+   A grounded nature theme: mossy off-white background, deep pine and
+   fern greens, bark-brown text and a warm sunlit-amber accent.
+   Opt in with data-theme="forest-floor".
+   ========================================================================== */
+[data-theme="forest-floor"] {
+  /* ---- Forest Floor palette ---- */
+  --bg-body-var: #eef0e5;          /* morning mist on moss */
+  --bg-surface-var: #f8f8f1;
+  --bg-dark-var: #1f3d2b;          /* deep pine */
+  --bg-dark-alt-var: #3d6b47;      /* fern green */
+
+  --text-primary-var: #2e2a1f;     /* bark brown */
+  --text-on-dark-var: #f3f1e4;
+  --text-muted-var: #6b6a4f;       /* dried lichen */
+
+  --accent-var: #c98a2e;           /* sunlit amber */
+  --accent-light-var: #e8c27a;     /* honey light */
+
+  --border-color-var: #d6dac6;
+  --border-color-dark-var: #142619;
+
+  /* ---- Semantic tokens pick up the values above automatically ---- */
+  --bg-body: var(--bg-body-var);
+  --bg-surface: var(--bg-surface-var);
+  --bg-dark: var(--bg-dark-var);
+  --bg-dark-alt: var(--bg-dark-alt-var);
+
+  --text-primary: var(--text-primary-var);
+  --text-on-dark: var(--text-on-dark-var);
+  --text-muted: var(--text-muted-var);
+
+  --accent: var(--accent-var);
+  --accent-light: var(--accent-light-var);
+
+  --border-color: var(--border-color-var);
+  --border-color-dark: var(--border-color-dark-var);
 }

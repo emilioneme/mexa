@@ -8,7 +8,7 @@
 .hero .carousel__slide {
   position: relative;
   height: clamp(320px, 55vw, 560px);
-  background: linear-gradient(135deg, var(--bg-dark-alt), var(--bg-dark));
+  background: var(--bg-surface);
   display: flex;
   align-items: flex-end;
 }

@@ -31,7 +31,7 @@
        .carousel__arrow--prev / --next
        .carousel__dots > .carousel__dot (built dynamically)
   --------------------------------------------------------------------- */
-  function initCarousel(root, { autoplay = false, interval = 6000 } = {}) {
+  function initCarousel(root, { autoplay = false, interval = 6000, adaptiveHeight = false } = {}) {
     const track = root.querySelector(".carousel__track");
     const slides = Array.from(root.querySelectorAll(".carousel__slide"));
     const dotsWrap = root.querySelector(".carousel__dots");
@@ -54,8 +54,15 @@
       });
     }
 
+    // Size the track to the current slide so short slides don't inherit
+    // the height of the tallest one.
+    function fitHeight() {
+      if (adaptiveHeight) track.style.height = `${slides[index].offsetHeight}px`;
+    }
+
     function update() {
       track.style.transform = `translateX(-${index * 100}%)`;
+      fitHeight();
       if (dotsWrap) {
         Array.from(dotsWrap.children).forEach((dot, i) =>
           dot.classList.toggle("is-active", i === index)
@@ -76,6 +83,12 @@
       if (!autoplay) return;
       clearInterval(timer);
       timer = setInterval(next, interval);
+    }
+
+    // Re-fit whenever a slide's size changes (resize, font/image loads).
+    if (adaptiveHeight && "ResizeObserver" in window) {
+      const observer = new ResizeObserver(fitHeight);
+      slides.forEach((slide) => observer.observe(slide));
     }
 
     prevBtn && prevBtn.addEventListener("click", prev);
@@ -180,6 +193,6 @@
     if (hero) initCarousel(hero, { autoplay: true, interval: 5000 });
 
     const info = document.querySelector("[data-carousel='info']");
-    if (info) initCarousel(info, { autoplay: false });
+    if (info) initCarousel(info, { autoplay: false, adaptiveHeight: true });
   });
 })();

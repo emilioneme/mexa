@@ -83,7 +83,8 @@ section {
 
 .carousel__track {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel__slide {
@@ -99,7 +100,7 @@ section {
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(250, 243, 230, 0.85);
+  background: color-mix(in srgb, var(--bg-body) 85%, transparent);
   color: var(--text-primary);
   font-size: 1.2rem;
   cursor: pointer;
@@ -111,7 +112,7 @@ section {
 }
 
 .carousel__arrow:hover {
-  background: var(--vb-white);
+  background: var(--bg-surface);
 }
 
 .carousel__arrow--prev { left: var(--space-sm); }
@@ -131,12 +132,12 @@ section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid var(--vb-white);
+  border: 2px solid var(--bg-surface);
   background: transparent;
   cursor: pointer;
   padding: 0;
 }
 
 .carousel__dot.is-active {
-  background: var(--vb-white);
+  background: var(--bg-surface);
 }

@@ -33,21 +33,29 @@
 }
 
 /* ---- Shared alternating media row (one full "page" per slide) ----
-   Horizontal padding keeps content clear of the prev/next arrows,
-   which are absolutely positioned on top of the carousel. ---- */
+   Two-column grid on wide screens. Horizontal padding keeps content clear
+   of the prev/next arrows, which sit on the sides of the carousel until
+   the layout stacks (see media queries below). ---- */
 .info-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-areas: "media content";
   align-items: center;
-  gap: var(--space-lg);
-  padding: var(--space-lg) 72px;
+  align-self: flex-start;
+  gap: clamp(var(--space-md), 4vw, var(--space-lg));
+  padding: var(--space-lg) clamp(56px, 6vw, 80px);
 }
 
 .info-row--reverse {
-  flex-direction: row-reverse;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-areas: "content media";
 }
 
 .info-row__media {
-  flex: 0 0 min(40%, 340px);
+  grid-area: media;
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-subtle);
   background: var(--bg-dark-alt);
@@ -72,19 +80,23 @@
 }
 
 .info-row__content {
-  flex: 1;
+  grid-area: content;
+  min-width: 0;
+  max-width: 62ch;
   text-align: left;
 }
 
 .info-row__content h3 {
-  font-size: var(--fs-xl);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
   color: var(--accent-light);
   margin-bottom: var(--space-sm);
 }
 
 .info-row__content p {
-  font-size: var(--fs-md);
-  margin: 0 0 var(--space-xs);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  margin: 0 0 var(--space-sm);
 }
 
 .info-row__content p:last-child {
@@ -102,7 +114,7 @@
 .info-list li {
   position: relative;
   padding-left: 1.5rem;
-  font-size: var(--fs-md);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
 }
 
 .info-list li::before {
@@ -131,24 +143,48 @@
   opacity: 0.75;
 }
 
-@media (max-width: 720px) {
-  .info-row {
-    padding-inline: 56px;
-  }
-
+/* ---- Stacked layout: image on top, text below. The arrows move down
+   beside the dots so the text can use the full width of the slide. ---- */
+@media (max-width: 900px) {
   .info-row,
   .info-row--reverse {
-    flex-direction: column;
-    text-align: center;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "media"
+      "content";
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-sm) calc(44px + var(--space-md) * 1.5);
   }
 
   .info-row__media {
-    flex-basis: auto;
-    width: 100%;
-    max-width: 320px;
+    max-width: 480px;
   }
 
   .info-row__content {
+    justify-self: center;
+  }
+
+  .info .carousel__arrow {
+    top: auto;
+    bottom: var(--space-xs);
+    translate: none;
+  }
+
+  .info .carousel__arrow--prev { left: var(--space-xs); }
+  .info .carousel__arrow--next { right: var(--space-xs); }
+
+  .info .carousel__dots {
+    bottom: calc(var(--space-xs) + 22px - 5px);
+  }
+}
+
+@media (max-width: 560px) {
+  .info-row,
+  .info-row--reverse {
+    padding-inline: 0;
+  }
+
+  .info-row__content h3 {
     text-align: center;
   }
 }
