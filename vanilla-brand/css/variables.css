@@ -219,3 +219,45 @@
   --border-color: var(--border-color-var);
   --border-color-dark: var(--border-color-dark-var);
 }
+
+/* ==========================================================================
+   ALTERNATE PALETTE — "Cured Bean"
+   A dark theme taken from cured vanilla pods: near-black espresso
+   background, deep cocoa surfaces, cream text and burnished gold accents.
+   Opt in with data-theme="cured-bean".
+   ========================================================================== */
+[data-theme="cured-bean"] {
+  color-scheme: dark;
+
+  /* ---- Cured Bean palette ---- */
+  --bg-body-var: #1a120c;          /* espresso */
+  --bg-surface-var: #2a1d14;       /* cocoa */
+  --bg-dark-var: #0f0a06;          /* charred pod */
+  --bg-dark-alt-var: #33241a;      /* roasted bark */
+
+  --text-primary-var: #f1e4c8;     /* vanilla cream */
+  --text-on-dark-var: #f6ecd6;
+  --text-muted-var: #b8996e;       /* toasted sugar */
+
+  --accent-var: #d4a645;           /* burnished gold */
+  --accent-light-var: #ecc97a;     /* honey gold */
+
+  --border-color-var: #3d2c1f;
+  --border-color-dark-var: #2a1d14;
+
+  /* ---- Semantic tokens pick up the values above automatically ---- */
+  --bg-body: var(--bg-body-var);
+  --bg-surface: var(--bg-surface-var);
+  --bg-dark: var(--bg-dark-var);
+  --bg-dark-alt: var(--bg-dark-alt-var);
+
+  --text-primary: var(--text-primary-var);
+  --text-on-dark: var(--text-on-dark-var);
+  --text-muted: var(--text-muted-var);
+
+  --accent: var(--accent-var);
+  --accent-light: var(--accent-light-var);
+
+  --border-color: var(--border-color-var);
+  --border-color-dark: var(--border-color-dark-var);
+}
