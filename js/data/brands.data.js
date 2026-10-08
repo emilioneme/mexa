@@ -11,4 +11,9 @@ window.MEXA_BRANDS = [
     image: "assets/brands/finca-la-isla.png",
     website: "https://fincalaisla.com.mx/",
   },
+  {
+    name: "Vanilla Co.",
+    tag: "Pure Vanilla Products",
+    website: "vanilla-brand/index.html",
+  },
 ];

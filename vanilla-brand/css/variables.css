@@ -1,0 +1,55 @@
+/* ==========================================================================
+   VANILLA BRAND — COLOR PALETTE
+   This file is the single source of truth for the brand's look & feel.
+   Change the values below to re-skin the entire site instantly.
+   ========================================================================== */
+:root {
+  /* ---- Brand palette (edit these to rebrand) ---- */
+  --vb-cream: #faf3e6;        /* background / light surfaces */
+  --vb-cream-dark: #f0e3cc;   /* secondary surfaces, cards */
+  --vb-pod: #2b1a12;          /* vanilla pod dark brown — primary text/bg */
+  --vb-pod-light: #4a2f20;    /* lighter brown for accents */
+  --vb-bean: #6b4226;         /* mid brown */
+  --vb-gold: #c89b4a;         /* accent gold */
+  --vb-gold-light: #e4c784;   /* light gold / hover */
+  --vb-white: #ffffff;
+
+  /* ---- Semantic tokens (used throughout the site, don't rename) ---- */
+  --bg-body: var(--vb-cream);
+  --bg-surface: var(--vb-cream-dark);
+  --bg-dark: var(--vb-pod);
+  --bg-dark-alt: var(--vb-pod-light);
+
+  --text-primary: var(--vb-pod);
+  --text-on-dark: var(--vb-cream);
+  --text-muted: var(--vb-bean);
+
+  --accent: var(--vb-gold);
+  --accent-light: var(--vb-gold-light);
+
+  --border-color: rgba(43, 26, 18, 0.12);
+  --border-color-dark: rgba(250, 243, 230, 0.18);
+
+  /* ---- Typography ---- */
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-huge: clamp(3rem, 9vw, 7rem);
+  --fs-xl: clamp(2.2rem, 5vw, 3.6rem);
+  --fs-lg: clamp(1.6rem, 3vw, 2.4rem);
+  --fs-md: clamp(1.1rem, 1.6vw, 1.4rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.85rem;
+
+  /* ---- Spacing / layout ---- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+
+  --max-width: 1280px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
