@@ -1,8 +1,21 @@
 /* ==========================================================================
-   THEME BUILDER — side panel for designing a palette (preview tool)
-   Uses the fixed --builder-* colors so it never takes on the draft palette.
+   THEME BUILDER — side panel for designing a theme (preview tool)
+   Its colors are fixed here, NOT taken from the palette, so the panel stays
+   readable however wild the theme being tested gets. Frosted glass: mostly
+   opaque with a blur, so the page shows through just a little.
    ========================================================================== */
 .theme-builder {
+  --builder-bg: rgba(255, 255, 255, 0.8);
+  --builder-text: #1d1d1f;
+  --builder-text-soft: #5f5f66;
+  --builder-border: rgba(0, 0, 0, 0.12);
+  --builder-field-bg: rgba(255, 255, 255, 0.7);
+  --builder-hover-bg: rgba(0, 0, 0, 0.05);
+  --builder-primary: #1d1d1f;
+  --builder-on-primary: #ffffff;
+  --builder-ok: #1a7f37;
+  --builder-warn: #b3261e;
+
   position: fixed;
   top: var(--space-sm);
   right: var(--space-sm);
@@ -14,11 +27,20 @@
   border: 1px solid var(--builder-border);
   border-radius: var(--radius);
   background: var(--builder-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
   color: var(--builder-text);
   color-scheme: light;
   font-family: var(--font-body);
   font-size: var(--fs-sm);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Browsers without blur: go a bit more solid so text stays readable. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .theme-builder {
+    --builder-bg: rgba(255, 255, 255, 0.94);
+  }
 }
 
 .theme-builder[hidden] {
@@ -69,7 +91,7 @@
 }
 
 .theme-builder__icon:hover {
-  background: var(--builder-field-bg);
+  background: var(--builder-hover-bg);
 }
 
 /* ---- Body ---- */
@@ -119,27 +141,63 @@
   color: var(--builder-text-soft);
 }
 
-/* ---- Color groups ---- */
-.theme-builder__group {
-  margin-top: 1rem;
+/* ---- Sections (Base colors, Header, Hero, ...) ---- */
+.theme-builder__section {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--builder-border);
 }
 
-.theme-builder__legend {
+.theme-builder__section > summary {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 0.5em;
-  margin: 0 0 0.4rem;
+  padding: 0.7rem 0 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.theme-builder__section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.theme-builder__section > summary::before {
+  content: "\25B8";
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  transition: transform 0.2s;
+}
+
+.theme-builder__section[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.theme-builder__section > summary > span {
+  flex: 1;
+}
+
+.theme-builder__section-hint {
+  font-weight: 400;
+  color: var(--builder-text-soft);
+}
+
+.theme-builder__section-hint.is-low {
+  color: var(--builder-warn);
+  font-weight: 600;
+}
+
+.theme-builder__section[open] {
+  padding-bottom: 0.4rem;
+}
+
+.theme-builder__legend {
+  margin: 0.5rem 0 0.2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-size: 0.75rem;
-}
-
-.theme-builder__legend small {
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
+  font-size: 0.7rem;
   color: var(--builder-text-soft);
 }
 
@@ -151,7 +209,7 @@
   cursor: pointer;
 }
 
-.theme-builder__color input[type="color"] {
+.theme-builder__swatch {
   width: 2.1rem;
   height: 2.1rem;
   padding: 0;
@@ -162,22 +220,50 @@
   overflow: hidden;
 }
 
-.theme-builder__color input[type="color"]::-webkit-color-swatch-wrapper {
+.theme-builder__swatch::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-.theme-builder__color input[type="color"]::-webkit-color-swatch {
+.theme-builder__swatch::-webkit-color-swatch {
   border: 0;
   border-radius: 50%;
 }
 
-.theme-builder__color input[type="color"]::-moz-color-swatch {
+.theme-builder__swatch::-moz-color-swatch {
   border: 0;
   border-radius: 50%;
 }
 
 .theme-builder__color-label {
   flex: 1;
+}
+
+/* A part color changed from its base color gets a dot and a reset button. */
+.theme-builder__color.is-overridden .theme-builder__color-label::after {
+  content: " \2022";
+  color: var(--builder-primary);
+  font-weight: 700;
+}
+
+.theme-builder__reset {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--builder-text-soft);
+  font-size: 1rem;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.theme-builder__color.is-overridden .theme-builder__reset {
+  visibility: visible;
+}
+
+.theme-builder__reset:hover {
+  background: var(--builder-hover-bg);
+  color: var(--builder-text);
 }
 
 .theme-builder__hex {
@@ -198,7 +284,7 @@
 /* ---- Readability checks ---- */
 .theme-builder__checks {
   list-style: none;
-  margin: 0;
+  margin: 0 0 0.3rem;
   padding: 0;
 }
 
@@ -227,7 +313,7 @@
   padding: 0.65em 0.8em;
   border: 1px solid var(--builder-border);
   border-radius: var(--radius-sm);
-  background: var(--builder-bg);
+  background: var(--builder-field-bg);
   color: var(--builder-text);
   font: inherit;
   font-weight: 600;
@@ -235,7 +321,7 @@
 }
 
 .theme-builder__btn:hover {
-  background: var(--builder-field-bg);
+  background: var(--builder-hover-bg);
 }
 
 .theme-builder__btn--primary {

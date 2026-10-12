@@ -38,6 +38,10 @@
   width: 100%;
 }
 
+.hero__caption .eyebrow {
+  color: var(--hero-eyebrow);
+}
+
 .hero__caption h2 {
   font-size: var(--fs-xl);
   transition: color var(--transition);

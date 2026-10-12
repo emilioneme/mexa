@@ -78,7 +78,7 @@
 .info-row__content h3 {
   font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   line-height: 1.15;
-  color: var(--info-heading);
+  color: var(--info-slide-title);
   margin-bottom: var(--space-sm);
 }
 

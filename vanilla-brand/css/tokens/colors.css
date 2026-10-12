@@ -40,6 +40,7 @@
   --hero-slide-bg: var(--palette-surface);     /* shows before the image loads */
   --hero-caption-text: var(--palette-on-deep);
   --hero-caption-hover: var(--palette-accent-soft);
+  --hero-eyebrow: var(--palette-accent);
   --hero-overlay: rgba(0, 0, 0, 0.55);         /* gradient behind the caption */
 
   /* ---- Category toggle ---- */
@@ -53,6 +54,7 @@
 
   /* ---- Product cards ---- */
   --card-bg: var(--palette-surface);
+  --card-text: var(--palette-ink);             /* product name */
   --card-border: var(--palette-line);
   --card-image-from: var(--palette-accent-soft); /* placeholder gradient */
   --card-image-to: var(--palette-base);
@@ -64,6 +66,7 @@
   --info-text: var(--palette-on-deep);
   --info-heading: var(--palette-accent-soft);
   --info-highlight: var(--palette-accent-soft); /* list check marks */
+  --info-slide-title: var(--palette-accent-soft); /* title of each carousel slide */
   --info-media-bg: var(--palette-deep-alt);
   --info-arrow-bg: rgba(255, 255, 255, 0.12);
   --info-arrow-hover-bg: rgba(255, 255, 255, 0.25);
@@ -71,6 +74,7 @@
   /* ---- Footer ---- */
   --footer-bg: var(--palette-deep);
   --footer-text: var(--palette-on-deep);
+  --footer-subtext: color-mix(in srgb, var(--palette-on-deep) 72%, var(--palette-deep)); /* tagline, copyright */
   --footer-heading: var(--palette-accent-soft); /* column titles + brand accent */
   --footer-link-hover: var(--palette-accent-soft);
   --footer-border: var(--palette-line-deep);
@@ -80,19 +84,4 @@
   --switcher-text: var(--palette-ink);
   --switcher-border: var(--palette-line);
   --switcher-accent: var(--palette-accent);
-}
-
-/* ---- Theme builder (preview tool) ----
-   Fixed neutral colors, NOT taken from the palette, so the builder stays
-   readable however wild the palette being tested gets. */
-:root {
-  --builder-bg: #ffffff;
-  --builder-text: #1d1d1f;
-  --builder-text-soft: #6e6e73;
-  --builder-border: #d9d9de;
-  --builder-field-bg: #f5f5f7;
-  --builder-primary: #1d1d1f;
-  --builder-on-primary: #ffffff;
-  --builder-ok: #1a7f37;
-  --builder-warn: #b3261e;
 }

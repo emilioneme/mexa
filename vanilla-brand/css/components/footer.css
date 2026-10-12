@@ -43,8 +43,7 @@
 }
 
 .site-footer__brand p {
-  color: var(--footer-text);
-  opacity: 0.75;
+  color: var(--footer-subtext);
   line-height: 1.5;
 }
 
@@ -78,7 +77,11 @@
   justify-content: space-between;
   gap: var(--space-xs);
   padding-top: var(--space-sm);
-  opacity: 0.7;
+  color: var(--footer-subtext);
+}
+
+.site-footer__bottom a:not(:hover) {
+  color: inherit;
 }
 
 @media (max-width: 640px) {

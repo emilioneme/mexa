@@ -102,6 +102,7 @@
 }
 
 .product-card__name {
+  color: var(--card-text);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 1rem;
