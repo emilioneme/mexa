@@ -1,0 +1,89 @@
+/* ==========================================================================
+   THEME SWITCHER — floating palette picker (preview tool)
+   ========================================================================== */
+.theme-switcher {
+  position: fixed;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+}
+
+.theme-switcher__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1.1em;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.theme-switcher__toggle-dot {
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.theme-switcher__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 210px;
+  padding: var(--space-xs);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switcher__panel[hidden] {
+  display: none;
+}
+
+.theme-switcher__option {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  padding: 0.5em 0.6em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.theme-switcher__option:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.theme-switcher__option[aria-pressed="true"] {
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.theme-switcher__swatch {
+  display: inline-flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.theme-switcher__swatch span {
+  width: 0.6rem;
+  height: 1.4rem;
+}
