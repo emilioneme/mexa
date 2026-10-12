@@ -87,3 +87,19 @@
   width: 0.6rem;
   height: 1.4rem;
 }
+
+.theme-switcher__create {
+  margin-top: var(--space-xs);
+  padding: 0.6em;
+  border: 1px dashed var(--switcher-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--switcher-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-switcher__create:hover {
+  border-color: var(--switcher-accent);
+}

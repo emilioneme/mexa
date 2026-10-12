@@ -9,6 +9,8 @@
       to js/data/themes.data.js so it shows in the switcher.
 
    This file is not linked anywhere; it's only a starting point.
+   Or design one visually: Themes button > "+ Create theme" on the site,
+   then "Download theme file" gives you step 1 ready-made.
    ========================================================================== */
 [data-theme="my-theme"] {
   /* color-scheme: dark; */          /* uncomment for dark themes (form controls, scrollbars) */

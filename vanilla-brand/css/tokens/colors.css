@@ -81,3 +81,18 @@
   --switcher-border: var(--palette-line);
   --switcher-accent: var(--palette-accent);
 }
+
+/* ---- Theme builder (preview tool) ----
+   Fixed neutral colors, NOT taken from the palette, so the builder stays
+   readable however wild the palette being tested gets. */
+:root {
+  --builder-bg: #ffffff;
+  --builder-text: #1d1d1f;
+  --builder-text-soft: #6e6e73;
+  --builder-border: #d9d9de;
+  --builder-field-bg: #f5f5f7;
+  --builder-primary: #1d1d1f;
+  --builder-on-primary: #ffffff;
+  --builder-ok: #1a7f37;
+  --builder-warn: #b3261e;
+}
