@@ -4,11 +4,18 @@
 (function () {
   /* ---------------------------------------------------------------------
      Loads each [data-include] mount point's HTML component from the
-     components/ folder before the rest of the page initializes.
+     components/ folder before the rest of the page initializes. Repeats
+     until none are left, so components can include other components
+     (e.g. info.html pulling in each file from info-pages/).
   --------------------------------------------------------------------- */
   async function includeComponents() {
-    const mounts = Array.from(document.querySelectorAll("[data-include]"));
+    let mounts;
+    while ((mounts = Array.from(document.querySelectorAll("[data-include]"))).length) {
+      await includeMounts(mounts);
+    }
+  }
 
+  async function includeMounts(mounts) {
     await Promise.all(
       mounts.map(async (mount) => {
         const url = mount.getAttribute("data-include");
@@ -18,6 +25,7 @@
           mount.outerHTML = await res.text();
         } catch (err) {
           console.error(err);
+          mount.removeAttribute("data-include");
           mount.innerHTML = `<p style="color:#c66">Could not load component: ${url}</p>`;
         }
       })

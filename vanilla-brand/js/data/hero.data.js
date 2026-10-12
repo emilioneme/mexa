@@ -4,19 +4,19 @@ window.VANILLA_HERO_SLIDES = [
   {
     eyebrow: "Harvested with Care",
     title: "Pure Vanilla, Naturally.",
-    image: "images/hero-images/hero-1.svg",
+    image: "images/hero-images/vanilla-farm.jpg",
     link: "#categories"
   },
   {
     eyebrow: "Single Origin",
     title: "From Pod to Pantry.",
-    image: "images/hero-images/hero-2.svg",
+    image: "images/hero-images/pods-package.webp",
     link: "#categories"
   },
   {
     eyebrow: "Baker's Choice",
     title: "Flavor You Can Trust.",
-    image: "images/hero-images/hero-3.svg",
+    image: "images/hero-images/baking.jpg",
     link: "#info"
   }
 ];
