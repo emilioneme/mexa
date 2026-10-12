@@ -1,0 +1,19 @@
+/* ==========================================================================
+   THEME — "Pastel Citrus"
+   A soft, light green + yellow theme.
+   ========================================================================== */
+[data-theme="pastel-citrus"] {
+  --palette-base: #f9fbe8;
+  --palette-surface: #ffffff;
+  --palette-ink: #3b4a2a;
+  --palette-ink-soft: #7a8f63;
+  --palette-line: #d8e3b8;
+
+  --palette-accent: #d9c64a;
+  --palette-accent-soft: #eadf8a;
+
+  --palette-deep: #4a6b3a;
+  --palette-deep-alt: #6b8f52;
+  --palette-on-deep: #f9fbe8;
+  --palette-line-deep: #2f4323;
+}

@@ -1,5 +1,5 @@
 // Theme switcher — a floating picker for previewing the palettes in
-// css/variables.css. The choice is remembered in localStorage and can be
+// css/themes/. The choice is remembered in localStorage and can be
 // shared as a link with ?theme=<id> (e.g. ?theme=cured-bean).
 // To remove it, delete this script, its CSS file and their tags in index.html.
 
@@ -43,9 +43,9 @@
   else root.removeAttribute("data-theme");
 
   // Reads a theme's colors straight from the CSS so swatches never drift
-  // out of sync with variables.css.
+  // out of sync with css/themes/.
   function swatchColors(id) {
-    const vars = ["--bg-body", "--bg-dark", "--accent"];
+    const vars = ["--palette-base", "--palette-deep", "--palette-accent"];
     // The default palette lives on :root, so read it with <html>'s theme
     // briefly removed; named themes are read from a hidden probe element.
     if (!id) {

@@ -1,6 +1,6 @@
-// Color themes available in the theme switcher. "id" must match a
-// [data-theme="..."] block in css/variables.css; an empty id means the
-// default :root palette.
+// Color themes available in the theme switcher. "id" must match a theme
+// file in css/themes/ (its [data-theme="..."] selector); an empty id means
+// the default Vanilla Bean theme. New theme? Start from css/themes/_template.css.
 window.VANILLA_THEMES = [
   { id: "",                name: "Vanilla Bean" },
   { id: "cured-bean",      name: "Cured Bean" },

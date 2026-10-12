@@ -1,0 +1,19 @@
+/* ==========================================================================
+   THEME — "White Orchard"
+   Crisp white background with yellow/green accents.
+   ========================================================================== */
+[data-theme="white-orchard"] {
+  --palette-base: #ffffff;
+  --palette-surface: #f3f7ea;
+  --palette-ink: #233318;
+  --palette-ink-soft: #5c7a4a;
+  --palette-line: #e3ead0;
+
+  --palette-accent: #c7d94a;
+  --palette-accent-soft: #e3ec8f;
+
+  --palette-deep: #2e4b22;
+  --palette-deep-alt: #3f6530;
+  --palette-on-deep: #ffffff;
+  --palette-line-deep: #1c2a13;
+}

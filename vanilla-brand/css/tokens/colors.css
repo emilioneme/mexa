@@ -1,0 +1,83 @@
+/* ==========================================================================
+   COLOR TOKENS — what each part of the site is painted with
+   --------------------------------------------------------------------------
+   Two layers:
+     1. --palette-*   The ~11 raw colors. Every theme in css/themes/ sets
+                      these, and nothing else is required.
+     2. --<part>-*    One token per colored thing (header background, footer
+                      link hover, ...). Defined ONCE here from the palette.
+                      Components only ever read these.
+
+   A theme can override any layer-2 token too, e.g. a different footer:
+     [data-theme="my-theme"] { --footer-bg: #123; }
+
+   Why :where(:root, [data-theme]):
+     A custom property that references another is resolved on the element
+     where it is declared. Declaring these on every [data-theme] element
+     makes them re-resolve against that theme's palette. :where() keeps
+     the specificity at zero, so a theme's own overrides always win no
+     matter which file loads first.
+   ========================================================================== */
+:where(:root, [data-theme]) {
+  /* ---- Page (body, section eyebrows) ---- */
+  --page-bg: var(--palette-base);
+  --page-text: var(--palette-ink);
+  --page-eyebrow: var(--palette-accent);
+
+  /* ---- Carousel controls (hero, info) ---- */
+  --carousel-arrow-bg: color-mix(in srgb, var(--palette-base) 85%, transparent);
+  --carousel-arrow-hover-bg: var(--palette-surface);
+  --carousel-arrow-text: var(--palette-ink);
+  --carousel-dot: var(--palette-surface);
+
+  /* ---- Header ---- */
+  --header-bg: var(--palette-base);
+  --header-text: var(--palette-ink);
+  --header-highlight: var(--palette-accent);   /* accented part of the name */
+  --header-border: var(--palette-line);
+
+  /* ---- Hero ---- */
+  --hero-slide-bg: var(--palette-surface);     /* shows before the image loads */
+  --hero-caption-text: var(--palette-on-deep);
+  --hero-caption-hover: var(--palette-accent-soft);
+  --hero-overlay: rgba(0, 0, 0, 0.55);         /* gradient behind the caption */
+
+  /* ---- Category toggle ---- */
+  --category-label: var(--palette-ink);
+  --category-hover-bg: var(--palette-surface);
+  --category-icon-bg: var(--palette-surface);
+  --category-active-bg: var(--palette-surface);
+  --category-active-border: var(--palette-accent);
+  --category-active-icon-bg: var(--palette-accent);
+  --category-active-icon-text: var(--palette-on-deep);
+
+  /* ---- Product cards ---- */
+  --card-bg: var(--palette-surface);
+  --card-border: var(--palette-line);
+  --card-image-from: var(--palette-accent-soft); /* placeholder gradient */
+  --card-image-to: var(--palette-base);
+  --card-text-muted: var(--palette-ink-soft);
+  --card-price: var(--palette-accent);
+
+  /* ---- Info section ---- */
+  --info-bg: var(--palette-deep);
+  --info-text: var(--palette-on-deep);
+  --info-heading: var(--palette-accent-soft);
+  --info-highlight: var(--palette-accent-soft); /* list check marks */
+  --info-media-bg: var(--palette-deep-alt);
+  --info-arrow-bg: rgba(255, 255, 255, 0.12);
+  --info-arrow-hover-bg: rgba(255, 255, 255, 0.25);
+
+  /* ---- Footer ---- */
+  --footer-bg: var(--palette-deep);
+  --footer-text: var(--palette-on-deep);
+  --footer-heading: var(--palette-accent-soft); /* column titles + brand accent */
+  --footer-link-hover: var(--palette-accent-soft);
+  --footer-border: var(--palette-line-deep);
+
+  /* ---- Theme switcher (preview tool) ---- */
+  --switcher-bg: var(--palette-surface);
+  --switcher-text: var(--palette-ink);
+  --switcher-border: var(--palette-line);
+  --switcher-accent: var(--palette-accent);
+}

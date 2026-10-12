@@ -1,5 +1,3 @@
-@import url("variables.css");
-
 *,
 *::before,
 *::after {
@@ -12,8 +10,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg-body);
-  color: var(--text-primary);
+  background: var(--page-bg);
+  color: var(--page-text);
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: 1.6;
@@ -55,7 +53,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--page-eyebrow);
   margin-bottom: var(--space-xs);
 }
 
@@ -100,8 +98,8 @@ section {
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: color-mix(in srgb, var(--bg-body) 85%, transparent);
-  color: var(--text-primary);
+  background: var(--carousel-arrow-bg);
+  color: var(--carousel-arrow-text);
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
@@ -112,7 +110,7 @@ section {
 }
 
 .carousel__arrow:hover {
-  background: var(--bg-surface);
+  background: var(--carousel-arrow-hover-bg);
 }
 
 .carousel__arrow--prev { left: var(--space-sm); }
@@ -132,12 +130,12 @@ section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid var(--bg-surface);
+  border: 2px solid var(--carousel-dot);
   background: transparent;
   cursor: pointer;
   padding: 0;
 }
 
 .carousel__dot.is-active {
-  background: var(--bg-surface);
+  background: var(--carousel-dot);
 }

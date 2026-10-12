@@ -1,0 +1,21 @@
+/* ==========================================================================
+   THEME — "Vanilla Blossom"
+   Drawn from a botanical watercolor of the vanilla orchid: paper-white
+   background, deep leaf and stem greens, pale yellow-green petals and the
+   golden-yellow lip.
+   ========================================================================== */
+[data-theme="vanilla-blossom"] {
+  --palette-base: #f4f3ee;           /* watercolor paper */
+  --palette-surface: #ffffff;
+  --palette-ink: #1f3a17;
+  --palette-ink-soft: #5f7f4a;
+  --palette-line: #dde5c8;
+
+  --palette-accent: #d9b91c;         /* orchid lip yellow */
+  --palette-accent-soft: #dfe89a;    /* petal yellow-green */
+
+  --palette-deep: #2f6b24;           /* deep leaf green */
+  --palette-deep-alt: #4c8c33;       /* stem green */
+  --palette-on-deep: #fbfaf3;
+  --palette-line-deep: #1a2e12;
+}

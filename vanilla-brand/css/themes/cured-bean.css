@@ -1,0 +1,22 @@
+/* ==========================================================================
+   THEME — "Cured Bean"
+   A dark theme taken from cured vanilla pods: near-black espresso
+   background, deep cocoa surfaces, cream text and burnished gold accents.
+   ========================================================================== */
+[data-theme="cured-bean"] {
+  color-scheme: dark;
+
+  --palette-base: #1a120c;           /* espresso */
+  --palette-surface: #2a1d14;        /* cocoa */
+  --palette-ink: #f1e4c8;            /* vanilla cream */
+  --palette-ink-soft: #b8996e;       /* toasted sugar */
+  --palette-line: #3d2c1f;
+
+  --palette-accent: #d4a645;         /* burnished gold */
+  --palette-accent-soft: #ecc97a;    /* honey gold */
+
+  --palette-deep: #0f0a06;           /* charred pod */
+  --palette-deep-alt: #33241a;       /* roasted bark */
+  --palette-on-deep: #f6ecd6;
+  --palette-line-deep: #2a1d14;
+}

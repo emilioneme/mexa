@@ -6,30 +6,19 @@
    (.info-list, .info-quote, etc.) a given row needs.
    ========================================================================== */
 .info {
-  background: var(--bg-dark);
-  color: var(--text-on-dark);
+  background: var(--info-bg);
+  color: var(--info-text);
+
+  /* Re-skin the shared carousel controls for the deep background */
+  --carousel-arrow-bg: var(--info-arrow-bg);
+  --carousel-arrow-hover-bg: var(--info-arrow-hover-bg);
+  --carousel-arrow-text: var(--info-text);
+  --carousel-dot: var(--info-text);
 }
 
 .info .section-heading h2,
 .info .eyebrow {
-  color: var(--accent-light);
-}
-
-.info .carousel__arrow {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--text-on-dark);
-}
-
-.info .carousel__arrow:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.info .carousel__dot {
-  border-color: var(--text-on-dark);
-}
-
-.info .carousel__dot.is-active {
-  background: var(--text-on-dark);
+  color: var(--info-heading);
 }
 
 /* ---- Shared alternating media row (one full "page" per slide) ----
@@ -58,7 +47,7 @@
   justify-self: center;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-subtle);
-  background: var(--bg-dark-alt);
+  background: var(--info-media-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +64,7 @@
   font-size: var(--fs-sm);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-on-dark);
+  color: var(--info-text);
   opacity: 0.5;
 }
 
@@ -89,7 +78,7 @@
 .info-row__content h3 {
   font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   line-height: 1.15;
-  color: var(--accent-light);
+  color: var(--info-heading);
   margin-bottom: var(--space-sm);
 }
 
@@ -121,7 +110,7 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--accent-light);
+  color: var(--info-highlight);
   font-weight: 700;
 }
 

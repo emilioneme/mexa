@@ -1,0 +1,20 @@
+/* ==========================================================================
+   THEME — "Forest Floor"
+   A grounded nature theme: mossy off-white background, deep pine and
+   fern greens, bark-brown text and a warm sunlit-amber accent.
+   ========================================================================== */
+[data-theme="forest-floor"] {
+  --palette-base: #eef0e5;           /* morning mist on moss */
+  --palette-surface: #f8f8f1;
+  --palette-ink: #2e2a1f;            /* bark brown */
+  --palette-ink-soft: #6b6a4f;       /* dried lichen */
+  --palette-line: #d6dac6;
+
+  --palette-accent: #c98a2e;         /* sunlit amber */
+  --palette-accent-soft: #e8c27a;    /* honey light */
+
+  --palette-deep: #1f3d2b;           /* deep pine */
+  --palette-deep-alt: #3d6b47;       /* fern green */
+  --palette-on-deep: #f3f1e4;
+  --palette-line-deep: #142619;
+}

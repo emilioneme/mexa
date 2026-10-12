@@ -1,0 +1,21 @@
+/* ==========================================================================
+   THEME — "Vanilla Bean" (default)
+   Warm cream background, dark bean browns and a golden accent.
+   Applies when <html> has no data-theme, or data-theme="vanilla-bean".
+   ========================================================================== */
+:root:not([data-theme]),
+[data-theme="vanilla-bean"] {
+  --palette-base: #faf3e6;
+  --palette-surface: #ffffff;
+  --palette-ink: #2b1a12;
+  --palette-ink-soft: #6b4226;
+  --palette-line: #454545;
+
+  --palette-accent: #c89b4a;
+  --palette-accent-soft: #e4c784;
+
+  --palette-deep: #2b1a12;
+  --palette-deep-alt: #4a2f20;
+  --palette-on-deep: #ffffff;
+  --palette-line-deep: #130c01;
+}

@@ -1,0 +1,40 @@
+/* ==========================================================================
+   THEME TEMPLATE — copy this file to start a new theme
+   --------------------------------------------------------------------------
+   1. Copy to css/themes/<your-theme-id>.css and replace "my-theme" below.
+   2. Fill in the palette (every --palette-* is required).
+   3. Add  <link rel="stylesheet" href="css/themes/<your-theme-id>.css">
+      to index.html, next to the other themes.
+   4. Add  { id: "<your-theme-id>", name: "Your Theme" }
+      to js/data/themes.data.js so it shows in the switcher.
+
+   This file is not linked anywhere; it's only a starting point.
+   ========================================================================== */
+[data-theme="my-theme"] {
+  /* color-scheme: dark; */          /* uncomment for dark themes (form controls, scrollbars) */
+
+  /* ---- Light areas: page, header, categories, cards ---- */
+  --palette-base: #ffffff;           /* page background */
+  --palette-surface: #ffffff;        /* cards, panels, hover/active fills */
+  --palette-ink: #000000;            /* main text */
+  --palette-ink-soft: #666666;       /* secondary text (descriptions) */
+  --palette-line: #dddddd;           /* borders on light areas */
+
+  /* ---- Accent ---- */
+  --palette-accent: #c89b4a;         /* prices, eyebrows, active states */
+  --palette-accent-soft: #e4c784;    /* softer accent: headings on deep areas, hovers */
+
+  /* ---- Deep areas: info section, footer ---- */
+  --palette-deep: #222222;           /* background of the bold sections */
+  --palette-deep-alt: #333333;       /* panels inside deep sections */
+  --palette-on-deep: #ffffff;        /* text on deep sections, accent fills and photos */
+  --palette-line-deep: #111111;      /* borders inside deep sections */
+
+  /* ---- Optional: override any part directly ----
+     Every token is listed in css/tokens/colors.css. For example:
+  --header-bg: var(--palette-deep);
+  --header-text: var(--palette-on-deep);
+  --footer-bg: #0b0b0b;
+  --hero-overlay: rgba(0, 0, 0, 0.35);
+  */
+}
