@@ -15,10 +15,10 @@
   gap: 0.8rem;
   background: none;
   border: 2px solid transparent;
-  padding: var(--space-md) var(--space-sm);
-  border-radius: var(--radius);
+  padding: var(--space-sm);
+  border-radius: var(--radius-subtle);
   cursor: pointer;
-  width: 100%;
+  justify-self: center;
   transition: border-color var(--transition), background var(--transition);
 }
 
