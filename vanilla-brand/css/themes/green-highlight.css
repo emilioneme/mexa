@@ -1,0 +1,30 @@
+/* ==========================================================================
+   THEME — "green-highlight"
+   Made with the theme builder on 2026-10-13.
+   ========================================================================== */
+[data-theme="green-highlight"] {
+  --palette-base: #ffffff;           /* page background */
+  --palette-surface: #f8f8f1;        /* cards, panels, hover/active fills */
+  --palette-ink: #2e2a1f;            /* main text */
+  --palette-ink-soft: #46440c;       /* secondary text (descriptions) */
+  --palette-line: #d6dac6;           /* borders on light areas */
+
+  --palette-accent: #80bb7c;         /* prices, eyebrows, active states */
+  --palette-accent-soft: #87c355;    /* softer accent: headings on deep areas, hovers */
+
+  --palette-deep: #1f3d2b;           /* background of the bold sections */
+  --palette-deep-alt: #3d6b47;       /* panels inside deep sections */
+  --palette-on-deep: #f3f1e4;        /* text on deep sections, accent fills and photos */
+  --palette-line-deep: #142619;      /* borders inside deep sections */
+
+  /* ---- Header ---- */
+  --header-bg: #659362;
+  --header-text: #ffffff;
+  --header-border: #ffffff;
+
+  /* ---- Hero ---- */
+  --hero-eyebrow: #86ca81;
+
+  /* ---- Info ---- */
+  --info-heading: #ffffff;
+}
