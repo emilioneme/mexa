@@ -1,0 +1,52 @@
+/* ==========================================================================
+   THEME — "yellow-highlight"
+   Made with the theme builder on 2026-10-13.
+   ========================================================================== */
+[data-theme="yellow-highlight"] {
+  --palette-base: #ffffff;           /* page background */
+  --palette-surface: #f8f8f1;        /* cards, panels, hover/active fills */
+  --palette-ink: #2e2a1f;            /* main text */
+  --palette-ink-soft: #46440c;       /* secondary text (descriptions) */
+  --palette-line: #d6dac6;           /* borders on light areas */
+
+  --palette-accent: #928335;         /* prices, eyebrows, active states */
+  --palette-accent-soft: #c3b155;    /* softer accent: headings on deep areas, hovers */
+
+  --palette-deep: #eae180;           /* background of the bold sections */
+  --palette-deep-alt: #e7fb50;       /* panels inside deep sections */
+  --palette-on-deep: #f3f1e4;        /* text on deep sections, accent fills and photos */
+  --palette-line-deep: #142619;      /* borders inside deep sections */
+
+  /* ---- Header ---- */
+  --header-bg: #ffef85;
+  --header-text: #000000;
+  --header-border: #ffffff;
+
+  /* ---- Hero ---- */
+  --hero-eyebrow: #ffffff;
+
+  /* ---- Main ---- */
+  --page-eyebrow: #ffe229;
+
+  /* ---- Categories ---- */
+  --category-active-icon-bg: #fff085;
+  --category-active-border: #ffd500;
+
+  /* ---- Product cards ---- */
+  --card-image-from: #ffffff;
+  --card-image-to: #ffffff;
+  --card-bg: #f4f4f0;
+  --card-price: #f1c700;
+
+  /* ---- Info ---- */
+  --info-bg: #fff085;
+  --info-heading: #000000;
+  --info-text: #000000;
+  --info-slide-title: #9d8d39;
+
+  /* ---- Footer ---- */
+  --footer-text: #000000;
+  --footer-subtext: #333333;
+  --footer-heading: #d7b614;
+  --footer-link-hover: #d7b614;
+}

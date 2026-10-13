@@ -5,7 +5,7 @@ window.VANILLA_THEMES = [
   { id: "",                name: "Vanilla Bean" },
   { id: "cured-bean",      name: "Cured Bean" },
   { id: "pastel-citrus",   name: "Pastel Citrus" },
-  { id: "white-orchard",   name: "White Orchard" },
-  { id: "vanilla-blossom", name: "Vanilla Blossom" },
-  { id: "forest-floor",    name: "Forest Floor" }
+  { id: "forest-floor",    name: "Forest Floor" },
+  { id: "green-highlight", name: "Green Highlight" },
+  { id: "yellow-highlight", name: "Yellow Highlight" }
 ];
