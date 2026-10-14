@@ -7,5 +7,6 @@ window.VANILLA_THEMES = [
   { id: "pastel-citrus",   name: "Pastel Citrus" },
   { id: "forest-floor",    name: "Forest Floor" },
   { id: "green-highlight", name: "Green Highlight" },
-  { id: "yellow-highlight", name: "Yellow Highlight" }
+  { id: "yellow-highlight", name: "Yellow Highlight" },
+  { id: "voladores",       name: "Voladores" }
 ];

@@ -1,0 +1,53 @@
+/* ==========================================================================
+   THEME — "voladores"
+   Made with the theme builder on 2026-10-14.
+   ========================================================================== */
+[data-theme="voladores"] {
+  --palette-base: #ffffff;           /* page background */
+  --palette-surface: #f4f4f0;        /* cards, panels, hover/active fills */
+  --palette-ink: #eaad68;            /* main text */
+  --palette-ink-soft: #eaad68;       /* secondary text (descriptions) */
+  --palette-line: #ffffff;           /* borders on light areas */
+
+  --palette-accent: #689a94;         /* prices, eyebrows, active states */
+  --palette-accent-soft: #ffffff;    /* softer accent: headings on deep areas, hovers */
+
+  --palette-deep: #689a94;           /* background of the bold sections */
+  --palette-deep-alt: #ffffff;       /* panels inside deep sections */
+  --palette-on-deep: #000000;        /* text on deep sections, accent fills and photos */
+  --palette-line-deep: #1a2e12;      /* borders inside deep sections */
+
+  /* ---- Header ---- */
+  --header-bg: #ad1918;
+  --header-text: #ffffff;
+  --header-border: #ffffff;
+
+  /* ---- Hero ---- */
+  --hero-caption-text: #fbfaf3;
+  --hero-caption-hover: #ad1918;
+  --hero-eyebrow: #fb9898;
+
+  /* ---- Main ---- */
+  --page-text: #ad1918;
+  --page-eyebrow: #eaad68;
+
+  /* ---- Categories ---- */
+  --category-active-icon-bg: #eaad68;
+  --category-active-border: #eaad68;
+
+  /* ---- Product cards ---- */
+  --card-border: #ad1918;
+  --card-text: #ad1918;
+  --card-price: #689a94;
+
+  /* ---- Info ---- */
+  --info-bg: #f0f0f0;
+  --info-heading: #ad1918;
+  --info-slide-title: #689a94;
+
+  /* ---- Footer ---- */
+  --footer-text: #ffffff;
+  --footer-subtext: #dedede;
+  --footer-heading: #ad1918;
+  --footer-link-hover: #ad1918;
+}
