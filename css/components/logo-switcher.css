@@ -1,0 +1,95 @@
+/* ==========================================================================
+   LOGO SWITCHER — floating logo picker (preview tool)
+   ========================================================================== */
+.logo-switcher {
+  position: fixed;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 110;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+}
+
+.logo-switcher__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  padding: 0.45em 1.1em 0.45em 0.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--color-black-soft);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.logo-switcher__toggle:hover {
+  border-color: var(--accent-light);
+}
+
+.logo-switcher__toggle-icon {
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 0.45em;
+}
+
+.logo-switcher__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 270px;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  padding: var(--space-xs);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--color-black-soft);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.logo-switcher__panel[hidden] {
+  display: none;
+}
+
+.logo-switcher__option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35em;
+  padding: 0.6em 0.7em;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.logo-switcher__option:hover {
+  background: rgba(233, 226, 207, 0.06);
+  color: var(--text-primary);
+}
+
+.logo-switcher__option[aria-pressed="true"] {
+  border-color: var(--accent-light);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.logo-switcher__preview img {
+  height: 1.6rem;
+  width: auto;
+}
+
+.logo-switcher__name {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}

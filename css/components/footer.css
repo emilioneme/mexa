@@ -14,8 +14,12 @@
 }
 
 .site-footer__brand h2 {
-  font-size: var(--fs-xl);
-  color: var(--color-green-800);
+  line-height: 0;
+}
+
+.site-footer__logo {
+  height: clamp(2.75rem, 5vw, 4rem);
+  width: auto;
 }
 
 .site-footer__brand p {

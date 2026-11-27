@@ -23,19 +23,17 @@
 }
 
 .site-header .logo h1 {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  letter-spacing: 0.08em;
-  color: var(--text-primary);
-  transition: color var(--transition);
+  line-height: 0;
 }
 
-.site-header .logo:hover h1 {
-  color: var(--accent-light);
+.site-header .logo__img {
+  height: clamp(1.9rem, 2.6vw, 2.5rem);
+  width: auto;
+  transition: opacity var(--transition);
 }
 
-.site-header .logo span {
-  color: var(--accent-light);
+.site-header .logo:hover .logo__img {
+  opacity: 0.8;
 }
 
 .site-header nav ul {
